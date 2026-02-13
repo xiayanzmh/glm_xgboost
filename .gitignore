@@ -37,6 +37,9 @@ models/
 *.pth
 *.onnx
 
+# Generated plots and images
+*.png
+
 # IDE
 .vscode/
 .idea/
