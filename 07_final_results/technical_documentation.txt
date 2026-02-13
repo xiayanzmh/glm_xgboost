@@ -1,0 +1,70 @@
+
+TECHNICAL DOCUMENTATION
+GLM vs XGBoost Modeling Project
+Generated: 2026-02-09 10:24:00
+
+1. DATA PREPROCESSING
+==================
+
+Original Data:
+• Shape: (50000, 20)
+• Features: 18 (V1-V18)
+• Target Distribution: {0: 34003, 1: 15997}
+
+Feature Engineering:
+• Original features: 18
+• Engineered features: 30
+• Final shape: (50000, 32)
+
+Preprocessing Steps:
+• Categorical encoding (V10: A/B → 0/1)
+• Feature interactions and polynomial terms
+• Ratio features and binning
+• Standard scaling for GLM
+• SMOTE for class imbalance
+• Train/Validation/Test splits (65%/15%/20%)
+
+2. MODEL DEVELOPMENT
+===================
+
+GLM (Logistic Regression):
+• Best Model: Best_Weighted_LR
+• Models Evaluated: Basic_LR, Weighted_LR, SMOTE_LR, Best_Weighted_LR, Best_SMOTE_LR
+• Validation AUC: 0.7673
+• Regularization: L1 (LASSO), L2 (Ridge), Elastic Net tested
+
+XGBoost:
+• Best Model: Best_Balanced_XGB
+• Models Evaluated: Basic_XGB, Balanced_XGB, SMOTE_XGB, Best_Balanced_XGB, Best_SMOTE_XGB
+• Validation AUC: 0.8359
+• Optimization: Optuna-based hyperparameter tuning
+
+3. MODEL COMPARISON
+==================
+• Winner: XGBoost
+• Statistical Significance: XGBoost
+• AUC Difference: 0.0699 ± 0.0038
+• 95% Confidence Interval: (np.float64(0.06264472060992823), np.float64(0.07774162860555778))
+
+4. INTERPRETABILITY ANALYSIS
+============================
+• Method: LIME (Local Interpretable Model-agnostic Explanations)
+• Instances Analyzed: 12
+• Analysis Types: Feature importance, stability, individual predictions
+• Visualizations: Created for local explanations and feature stability
+
+5. MODEL VALIDATION
+==================
+• Cross-validation: 5-fold stratified
+• Metrics: Accuracy, Precision, Recall, F1-Score, AUC-ROC
+• Test Set: Held-out 20% for final evaluation
+• Statistical Testing: Bootstrap-based significance testing
+• Bias Assessment: Checked for overfitting and underfitting
+
+6. COMPLIANCE & GOVERNANCE
+=========================
+• Model Documentation: Comprehensive technical and business docs
+• Version Control: All code versioned with uv package management
+• Reproducibility: Random seeds set for all stochastic processes
+• Interpretability: Local explanations provided for regulatory compliance
+• Performance Monitoring: Metrics tracked across train/validation/test

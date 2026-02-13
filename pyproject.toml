@@ -1,0 +1,27 @@
+[project]
+name = "glm-xgboost"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "imbalanced-learn>=0.14.1",
+    "ipython>=9.10.0",
+    "jupyter>=1.1.1",
+    "lime>=0.2.0.1",
+    "matplotlib>=3.10.8",
+    "numpy>=2.4.2",
+    "openpyxl>=3.1.5",
+    "optuna>=4.7.0",
+    "pandas>=3.0.0",
+    "plotly>=6.5.2",
+    "scikit-learn>=1.8.0",
+    "scipy>=1.17.0",
+    "seaborn>=0.13.2",
+    "statsmodels>=0.14.6",
+    "xgboost>=3.1.3",
+]
+
+# Note: If you need to access a private GitLab package registry,
+# configure authentication using environment variables or .netrc
+# See: https://docs.astral.sh/uv/configuration/indexes/
