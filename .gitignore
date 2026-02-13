@@ -54,3 +54,7 @@ uv.lock
 # Logs
 *.log
 logs/
+
+# Results and plots directories
+**/results/
+**/plots/
